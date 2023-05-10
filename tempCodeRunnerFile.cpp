@@ -1,1 +1,1 @@
- if(nearest_index>farthest_index)
+page_faults
