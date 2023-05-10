@@ -11,6 +11,20 @@ int main(){
     int min_index;
     int min_distance;
 
+    // for(int i=0;i<n;i++){
+    //     min_distance=INT_MAX;
+    //     for(int j=0;j<n;j++){
+    //         if(abs(head-arr[j])<min_distance){
+    //             min_distance=abs(head-arr[j]);
+    //             min_index=j;
+    //         }
+    //     }
+    //     seek_time+=abs(head-arr[min_index]);
+    //     printf("%d ",seek_time);
+    //     head=arr[min_index];
+    //     arr[min_index]=INT_MAX;
+    // }
+
     for(int i=0;i<n;i++){
         min_distance=INT_MAX;
         for(int j=0;j<n;j++){
@@ -19,12 +33,12 @@ int main(){
                 min_index=j;
             }
         }
-        seek_time+=abs(head-arr[min_index]);
-        printf("%d ",seek_time);
+        seek_time+=min_distance;
         head=arr[min_index];
         arr[min_index]=INT_MAX;
     }
-    // printf("Total seek time is %d\n",seek_time);
+
+    printf("Total seek time is %d\n",seek_time);
 
     return 0;
 }

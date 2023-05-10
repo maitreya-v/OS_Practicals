@@ -36,8 +36,6 @@ int main()
             }
 
             if(inframe==0){
-                int least_distance=n+1;
-            int least_index=n+1;
 
             int min=page_frames-1;
                 for(int k=0;k<page_frames;k++){

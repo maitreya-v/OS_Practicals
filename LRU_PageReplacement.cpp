@@ -26,34 +26,28 @@ int main()
         }
         if(inframe==0){
             inframe=0;
-            int least_distance=0;
-            int least_index=n+1;
+            int farthest_distance=0;
+            int farthest_index=0;
 
             for(int j=0;j<page_frames;j++){
-                int distance=n+1;
+                int distance=0;
                 for(int k=i-1;k>=0;k--){
                     if(frames[j]==page_references[k]){
                         distance=i-k;
-                        // cout<<"Distance"<<distance<<" ";
                         break;
                     }
                 }
-                if(distance>=least_distance){
-                    least_distance=distance;
-                    least_index=j;  
+                if(distance>=farthest_distance){
+                    farthest_distance=distance;
+                    farthest_index=j;  
                 }
             }
 
-            for(int x=0;x<page_frames;x++){
-                if(frames[x]==-1){
-                    frames[x]=page_references[i];
-                    inframe=1;
-                    break;
-
-                }
+            if(page_faults<page_frames){
+                frames[page_faults] = page_references[i];
             }
-            if(inframe==0){
-            frames[least_index]=page_references[i];
+            else{
+            frames[farthest_index]=page_references[i];
             }
             page_faults++;
             // cout<<inframe<<endl;
