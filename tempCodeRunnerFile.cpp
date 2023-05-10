@@ -1,0 +1,1 @@
+ if(nearest_index>farthest_index)
